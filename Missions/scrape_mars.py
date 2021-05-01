@@ -1,3 +1,4 @@
+#converted mission_to_mars Jupyter notebook into a Python script with a scrape function
 
 from splinter import Browser
 from bs4 import BeautifulSoup as bs
