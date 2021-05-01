@@ -47,7 +47,7 @@ def featured_image(browser):
 
 
 def mars_facts(browser):
-    browser = init_browser
+    browser = init_browser()
 
     fax_url = "https://galaxyfacts-mars.com/"
     browser.visit(fax_url)
