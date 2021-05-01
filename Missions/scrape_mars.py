@@ -6,14 +6,14 @@ import pandas as pd
 import requests
 import pymongo
 
-def init_browser():
+def scrape():
     executable_path = {"executable_path":"/Users/brittanyaylia/Desktop/chromedriver"}
     return Browser("chrome", **executable_path, headless=False)
 
 mars_info = {}
 
 def news(browser):
-    browser = init_browser()
+    browser = scrape()
 
     news_url = 'https://mars.nasa.gov/news/'
     browser.visit(news_url)
@@ -31,7 +31,7 @@ def news(browser):
 
 
 def featured_image(browser):
-    browser = init_browser()
+    browser = scrape()
 
     img_url = 'https://spaceimages-mars.com/'
     browser.visit(img_url)
@@ -49,7 +49,7 @@ def featured_image(browser):
 
 
 def mars_facts(browser):
-    browser = init_browser()
+    browser = scrape()
 
     fax_url = "https://galaxyfacts-mars.com/"
     browser.visit(fax_url)
@@ -65,7 +65,7 @@ def mars_facts(browser):
 
 
 def hemispheres(browser):
-    browser = init_browser()
+    browser = scrape()
     
     hemi_url = 'https://marshemispheres.com/'
     browser.visit(hemi_url)
@@ -91,6 +91,7 @@ def hemispheres(browser):
     mars_info['hemisphere_images'] = images
 
     browser.quit()
+
     return mars_info
 
 
